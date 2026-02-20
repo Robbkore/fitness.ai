@@ -35,7 +35,9 @@ func main() {
 	r.Use(middleware.Recoverer)
 
 	// API Routes
+	// API Routes
 	api.SetupAuthRoutes(r)
+	api.SetupUserRoutes(r)
 
 	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("Fitness.ai API is running"))

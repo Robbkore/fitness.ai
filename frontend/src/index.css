@@ -5,37 +5,44 @@
 @layer base {
   :root {
     /* Premium Dark Mode Theme */
-    --background: 180 3% 6%; /* #0E0F0F */
-    --foreground: 0 0% 100%; /* #FFFFFF */
-    
-    --card: 240 4% 11%;      /* #1C1C1E */
+    --background: 180 3% 6%;
+    /* #0E0F0F */
+    --foreground: 0 0% 100%;
+    /* #FFFFFF */
+
+    --card: 240 4% 11%;
+    /* #1C1C1E */
     --card-foreground: 0 0% 100%;
-    
+
     --popover: 240 4% 11%;
     --popover-foreground: 0 0% 100%;
-    
-    --primary: 206 79% 52%;  /* #2592E6 - FitnessAI Blue */
+
+    --primary: 206 79% 52%;
+    /* #2592E6 - FitnessAI Blue */
     --primary-foreground: 0 0% 100%;
-    
-    --secondary: 221 56% 21%; /* #182B55 - Deep Navy */
+
+    --secondary: 221 56% 21%;
+    /* #182B55 - Deep Navy */
     --secondary-foreground: 0 0% 100%;
-    
+
     --muted: 240 4% 11%;
-    --muted-foreground: 215 16% 65%; /* #9CA3AF */
-    
+    --muted-foreground: 215 16% 65%;
+    /* #9CA3AF */
+
     --accent: 206 79% 52%;
     --accent-foreground: 0 0% 100%;
-    
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    
-    --border: 240 4% 15%; /* Slightly lighter than card for inputs */
+
+    --border: 240 4% 15%;
+    /* Slightly lighter than card for inputs */
     --input: 240 4% 15%;
     --ring: 206 79% 52%;
-    
+
     /* Pill shaped buttons and soft cards */
     --radius: 1rem;
-    
+
     --chart-1: 206 79% 52%;
     --chart-2: 221 56% 21%;
     --chart-3: 180 3% 20%;
@@ -48,7 +55,35 @@
   * {
     @apply border-border outline-ring;
   }
+
   body {
     @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Hide number input spinners by default */
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+    /* Firefox */
+  }
+
+  /* Show spinners when the field is focused */
+  input[type="number"]:focus::-webkit-inner-spin-button,
+  input[type="number"]:focus::-webkit-outer-spin-button {
+    -webkit-appearance: inner-spin-button;
+    appearance: inner-spin-button;
+  }
+
+  input[type="number"]:focus {
+    -moz-appearance: number-input;
+    appearance: auto;
+    /* Firefox */
   }
 }

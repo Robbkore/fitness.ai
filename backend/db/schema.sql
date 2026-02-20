@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS users (
     height REAL,
     weight REAL,
     activity_level TEXT,
+    country TEXT,
     goals TEXT, -- JSON stored as text
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
